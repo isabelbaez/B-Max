@@ -14,6 +14,7 @@ from rest_framework.decorators import api_view
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from .vitals_utils.heart_rate_calculator import calculate_heart_rate
 
 
 load_dotenv()
@@ -39,15 +40,16 @@ def measure(request):
 
 def heart_rate():
 
-    pulse = 80 #TODO: replace with pulse calculation
-
-    #remove video file once we are done with calculation
     current_dir = os.path.dirname(os.path.abspath(__file__))
     backend_dir = os.path.dirname(current_dir)
     media_path = os.path.join(backend_dir, 'media')
     output_path = os.path.join(media_path, 'output.mov')
-    os.remove(output_path)
 
+    pulse = calculate_heart_rate(output_path)
+
+    #remove video file once we are done with calculation
+    os.remove(output_path)
+    
     return pulse
 
 def pain_probability():
