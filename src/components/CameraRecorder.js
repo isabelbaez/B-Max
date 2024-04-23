@@ -18,12 +18,11 @@ function CameraRecorder() {
             };
             mediaRecorder.onstop = () => {
 
-                const blob = new Blob(chunksRef.current, { type: 'video/webm' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'recording.webm';
-                a.click();
+                // const url = URL.createObjectURL(blob);
+                // const a = document.createElement('a');
+                // a.href = url;
+                // a.download = 'recording.webm';
+                // a.click();
                 setIsRecording(false);
                 uploadVideo(chunksRef.current);
                 // chunksToMOV(chunksRef.current)
@@ -43,10 +42,16 @@ function CameraRecorder() {
     };
 
     const uploadVideo = async (chunks) => {
+
+        const blob = new Blob(chunks, { type: 'video/webm' });
+
+        const formData = new FormData();
+        formData.append('file', blob, 'input.webm');
+
         try {
           const response = await fetch("http://localhost:8000/heartrate/measure", {
             method: 'POST',
-            body: chunks
+            body: blob
           });
       
           if (response.ok) {

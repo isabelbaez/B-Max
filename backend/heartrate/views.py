@@ -37,12 +37,20 @@ def measure(request, *args, **kwargs):
 @csrf_exempt
 def transcode_video(request):
 
-    # Save the received video chunks to a temporary file
     with open('input.webm', 'wb') as f:
         f.write(request.body)
 
+    # Get the absolute path to the current directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Get the absolute path to the backend directory (one level above the current directory)
+    backend_dir = os.path.dirname(current_dir)
+
+    input_path = os.path.join(backend_dir, 'input.webm')
+    output_path = os.path.join(backend_dir, 'output.mov')
+
     # Transcode the video from WebM to MOV format using FFmpeg
-    command = ['ffmpeg', '-i', 'input.webm', 'output.mov']
+    command = ['ffmpeg', '-i', input_path, '-vf', 'minterpolate=fps=30', output_path]
     subprocess.run(command, check=True)
 
     # Send the transcoded MOV video back to the client
