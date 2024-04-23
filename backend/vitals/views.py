@@ -27,13 +27,20 @@ def measure(request):
 
     process_video(request)
 
-    pain_prob = pain_probability()
-    print("PAIN: " + str(pain_prob) + "%")
+    pain_prob = None
+    try:
+        pain_prob = pain_probability()
+        print("PAIN: " + str(pain_prob) + "%") 
+    except:
+        print("Error") 
 
     pulse = heart_rate()
     print("PULSE: " + str(pulse))
 
-    response = HttpResponse("Success")
+    data = {"heart_rate": pulse, "pain_prob": pain_prob}
+    json_data = json.dumps(data)
+
+    response = HttpResponse(json_data)
     response.status_code = 200
     return response
 
@@ -49,7 +56,7 @@ def heart_rate():
 
     #remove video file once we are done with calculation
     os.remove(output_path)
-    
+
     return pulse
 
 def pain_probability():
@@ -93,7 +100,7 @@ def pain_probability():
             )
 
             second_response = client.chat.completions.create(
-                model="gpt-4-vision-preview",
+                model="gpt-4-1106-vision-preview",
                 messages=[
                     {
                         "role": "user",

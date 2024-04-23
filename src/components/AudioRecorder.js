@@ -36,7 +36,7 @@ function AudioRecorder({ state, setState }) {
             mediaRecorderRef.current.stop();
         }
         setCurrQuestion(currQuestion + 1)
-        if (currQuestion > 20){
+        if (currQuestion >= 20){
             setState(state + 1)
         }
     };
@@ -66,7 +66,7 @@ function AudioRecorder({ state, setState }) {
 
     return (
         <div>
-            {currQuestion <= 20 && currQuestion % 2 === 1 ? (
+            {currQuestion < 20 && currQuestion % 2 === 1 ? (
                 <div>
                     <h1>Question {(currQuestion + 1) / 2}</h1>
                     <audio
