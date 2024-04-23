@@ -17,15 +17,8 @@ function CameraRecorder() {
             chunksRef.current.push(e.data);
             };
             mediaRecorder.onstop = () => {
-
-                // const url = URL.createObjectURL(blob);
-                // const a = document.createElement('a');
-                // a.href = url;
-                // a.download = 'recording.webm';
-                // a.click();
                 setIsRecording(false);
                 uploadVideo(chunksRef.current);
-                // chunksToMOV(chunksRef.current)
             };
             mediaRecorder.start();
             setIsRecording(true);
@@ -42,21 +35,17 @@ function CameraRecorder() {
     };
 
     const uploadVideo = async (chunks) => {
-
         const blob = new Blob(chunks, { type: 'video/webm' });
-
         const formData = new FormData();
         formData.append('file', blob, 'input.webm');
 
         try {
-          const response = await fetch("http://localhost:8000/heartrate/measure", {
+          const response = await fetch("http://localhost:8000/vitals/measureVitals", {
             method: 'POST',
             body: blob
           });
       
           if (response.ok) {
-            // If the request is successful, you can handle the transcoded video here
-            // For example, you can save it to state or play it in a video player
             console.log('Transcoding successful');
           } else {
             console.error('Transcoding failed:', response.statusText);
@@ -64,51 +53,7 @@ function CameraRecorder() {
         } catch (error) {
           console.error('Error uploading video:', error);
         }
-    };
-
-
-
-
-    // const chunksToMOV = (chunks) => {
-    //     const blob = new Blob(chunks, { type: 'video/webm' });
-        
-    //     // Create a FileReader to read the Blob as an ArrayBuffer
-    //     const fileReader = new FileReader();
-        
-    //     fileReader.onload = () => {
-    //         // Once the ArrayBuffer is loaded, use FFmpeg to transcode it
-    //         const ffmpeg = createFFmpeg({ log: true });
-            
-    //         ffmpeg.load().then(async () => {
-    //         // Write the ArrayBuffer to FFmpeg's filesystem
-    //         ffmpeg.FS('writeFile', 'input.webm', new Uint8Array(fileReader.result));
-        
-    //         // Transcode the video from WebM to MOV format
-    //         await ffmpeg.run('-i', 'input.webm', 'output.mov');
-        
-    //         // Read the transcoded MOV file from FFmpeg's filesystem
-    //         const movData = ffmpeg.FS('readFile', 'output.mov');
-        
-    //         // Create a Blob from the transcoded MOV data
-    //         const movBlob = new Blob([movData.buffer], { type: 'video/quicktime' });
-        
-    //         // Create an object URL from the Blob
-    //         const movURL = URL.createObjectURL(movBlob);
-        
-    //         // Create a download link for the MOV file
-    //         const downloadLink = document.createElement('a');
-    //         downloadLink.href = movURL;
-    //         downloadLink.download = 'recorded_video.mov';
-    //         downloadLink.textContent = 'Download MOV';
-    //         document.body.appendChild(downloadLink);
-    //         });
-    //     };
-        
-    //     // Read the Blob as an ArrayBuffer
-    //     fileReader.readAsArrayBuffer(blob);
-    //     };
-          
-      
+    }; 
 
     return (
         <div>

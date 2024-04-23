@@ -17,6 +17,5 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('pain-detection/', include('pain_detection.urls')),
-    path('heartrate/', include('heartrate.urls')),
+    path('vitals/', include('vitals.urls')),
 ]
