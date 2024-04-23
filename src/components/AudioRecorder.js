@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 // import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 
-function AudioRecorder() {
+function AudioRecorder({ state, setState }) {
     const [isRecording, setIsRecording] = useState(false);
     const [currQuestion, setCurrQuestion] = useState(1)
     const audioRef = useRef(null);
@@ -36,6 +36,9 @@ function AudioRecorder() {
             mediaRecorderRef.current.stop();
         }
         setCurrQuestion(currQuestion + 1)
+        if (currQuestion > 20){
+            setState(state + 1)
+        }
     };
 
     const uploadAudio = async (chunks) => {
