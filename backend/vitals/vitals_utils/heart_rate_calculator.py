@@ -136,6 +136,6 @@ def calculate_heart_rate(filename):
             return bpm
 
 
-if __name__ == "__main__":
-    filename = 'output.mov'
-    calculate_heart_rate(filename)
+# if __name__ == "__main__":
+#     filename = 'output.mov'
+#     calculate_heart_rate(filename)
