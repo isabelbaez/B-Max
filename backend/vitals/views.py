@@ -151,7 +151,12 @@ def process_video(request):
     command_mov = ['ffmpeg', '-i', input_path, '-vf', 'minterpolate=fps=30', output_path]
     subprocess.run(command_mov, check=True)
 
-    output_frame_path = os.path.join(media_path, "frames/output_%03d.jpg")
+    frames_path = os.path.join(media_path, 'frames')
+
+    if not os.path.exists(frames_path):
+        os.makedirs(frames_path)
+
+    output_frame_path = os.path.join(frames_path, "output_%03d.jpg")
 
     command_frames = ['ffmpeg', '-i', input_path, '-vf', f'fps={1}', output_frame_path]
     subprocess.run(command_frames, check=True)
