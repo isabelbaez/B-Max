@@ -10,14 +10,13 @@ function Landing() {
 
 
   return ( 
-    <div>
-    {currTab === 0 ? (
-        <div className="flex column width-100 align-center">
-          cool
+    <div className="flex column width-100 align-center">
+    {currTab === 1 ? (
+        
           <AudioRecorder state={currTab} setState={setCurrTab} />
-        </div>
+        
       ) : (
-        currTab === 1 && <CameraRecorder />
+        currTab === 0 && <CameraRecorder state={currTab} setState={setCurrTab}/>
       )}
     </div>
   );

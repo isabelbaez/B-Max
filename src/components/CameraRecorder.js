@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 // import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 
-function CameraRecorder() {
+function CameraRecorder({state, setState}) {
     const [isRecording, setIsRecording] = useState(false);
     const videoRef = useRef(null);
     const mediaRecorderRef = useRef(null);
@@ -32,6 +32,8 @@ function CameraRecorder() {
         if (mediaRecorderRef.current) {
             mediaRecorderRef.current.stop();
         }
+
+        setState(state + 1);
     };
 
     const uploadVideo = async (chunks) => {
