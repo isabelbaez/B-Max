@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 // import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 
-function CameraRecorder({state, setState}) {
+function CameraRecorder({state, setState, onRecordingComplete}) {
     const [isRecording, setIsRecording] = useState(false);
     const videoRef = useRef(null);
     const mediaRecorderRef = useRef(null);
@@ -48,6 +48,8 @@ function CameraRecorder({state, setState}) {
           });
       
           if (response.ok) {
+            console.log("HELLOOO")
+            onRecordingComplete(response)
             console.log('Transcoding successful');
           } else {
             console.error('Transcoding failed:', response.statusText);
