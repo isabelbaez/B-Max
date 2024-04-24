@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-// import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 
 function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecordingComplete}) {
     const [isRecording, setIsRecording] = useState(false);
@@ -10,12 +9,10 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
     const chunksRef = useRef([]);
 
     useEffect(() => {
-        // Setup the stream right when the component mounts
         navigator.mediaDevices.getUserMedia({ video: true, audio: false })
             .then((stream) => {
                 videoRef.current.srcObject = stream;
-                setStreamActive(true); // Enable video visibility
-                // Clean up the stream when the component unmounts
+                setStreamActive(true);
                 return () => {
                     stream.getTracks().forEach(track => track.stop());
                 };
@@ -23,9 +20,6 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
             .catch((err) => {
                 console.error('Error accessing media devices:', err);
             });
-        // if (seconds <= 0) {
-        //     stopRecording();
-        // }
     }, []);
 
     const startRecording = () => {
@@ -45,15 +39,13 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
             const interval = setInterval(() => {
                 setSeconds(prevSeconds => {
                     if (prevSeconds <= 0) {
-                        clearInterval(interval); // Stop the interval when seconds reach zero
-                        stopRecording(); // Optionally stop recording when the timer hits zero
+                        clearInterval(interval);
+                        stopRecording();
                         return 0;
                     } else {
                         return prevSeconds - 1;
                     }
                 });
-
-                // setSeconds(seconds => seconds - 1);
             }, 1000);
             return () => clearInterval(interval);
         }
@@ -72,9 +64,14 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
         const formData = new FormData();
         formData.append('file', blob, 'input.webm');
 
+        let headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST');
+
         try {
             const response = await fetch("http://localhost:8000/vitals/measureVitals", {
                 method: 'POST',
+                headers: headers,
                 body: blob
             });
         
