@@ -1,0 +1,44 @@
+{
+    "questions" : [
+        {
+            "question_number" : 1,
+            "question" : "How would you rate your overall mood today? (Very positive, somewhat positive, neutral, somewhat negative, very negative)."
+        },
+        {
+            "question_number" : 2,
+            "question" : "Did you experience any physical pain today? If yes, please rate the pain on a scale from 1 to 10."
+        },
+        {
+            "question_number" : 3,
+            "question" : "Around how many hours of sleep did you get last night?"
+        },
+        {
+            "question_number" : 4,
+            "question" : "Did you feel rested upon waking up this morning?"
+        },
+        {
+            "question_number" : 5,
+            "question" : "Have you felt unusually tired or fatigued today? (Not at all, a little bit, moderately, very much, or extremely)."
+        },
+        {
+            "question_number" : 6,
+            "question" : "Did you experience any anxiety or nervousness today? (Not at all, a little bit, moderately, very much, or extremely)."
+        },
+        {
+            "question_number" : 7,
+            "question" : "Have you felt restless or unable to sit still today? (Not at all, a little bit, moderately, very much, or extremely)."
+        },
+        {
+            "question_number" : 8,
+            "question" : "How would you rate your concentration today? (Very good, good, average, poor, or very poor)."
+        },
+        {
+            "question_number" : 9,
+            "question" : "Did you take any medications today? If yes, did you take them as prescribed?"
+        },
+        {
+            "question_number" : 10,
+            "question" : "Are there any other symptoms or feelings you experienced today that you would like to note?"
+        }
+    ]
+}

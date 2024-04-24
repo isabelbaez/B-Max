@@ -1,6 +1,7 @@
 import subprocess
-from django.http import JsonResponse
+import json
 import speech_recognition as sr
+from django.http import HttpResponse
 
 def transcribe(request):
     print("ALOOOO")
@@ -37,7 +38,13 @@ def transcribe(request):
         # Clean up temporary files
         subprocess.run(['rm', temp_webm_path, temp_wav_path])
 
-        print("TRANSCRIPTION", text)
-        return JsonResponse({'transcription': text})
+        data = {"transcription": text}
+        json_data = json.dumps(data)
 
-    return JsonResponse({'error': 'This endpoint only supports POST requests.'}, status=405)
+        response = HttpResponse(json_data)
+        response.status_code = 200
+        return response
+    
+    response = HttpResponse('Error: This endpoint only supports POST requests.')
+    response.status_code = 405
+    return response

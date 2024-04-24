@@ -23,10 +23,10 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
             .catch((err) => {
                 console.error('Error accessing media devices:', err);
             });
-        if (seconds <= 0) {
-            stopRecording();
-        }
-    }, [seconds]);
+        // if (seconds <= 0) {
+        //     stopRecording();
+        // }
+    }, []);
 
     const startRecording = () => {
         const mediaRecorder = new MediaRecorder(videoRef.current.srcObject);
@@ -43,7 +43,17 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
 
         if (seconds > 0) {
             const interval = setInterval(() => {
-                setSeconds(seconds => seconds - 1);
+                setSeconds(prevSeconds => {
+                    if (prevSeconds <= 0) {
+                        clearInterval(interval); // Stop the interval when seconds reach zero
+                        stopRecording(); // Optionally stop recording when the timer hits zero
+                        return 0;
+                    } else {
+                        return prevSeconds - 1;
+                    }
+                });
+
+                // setSeconds(seconds => seconds - 1);
             }, 1000);
             return () => clearInterval(interval);
         }

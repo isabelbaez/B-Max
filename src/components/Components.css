@@ -1,0 +1,59 @@
+.container{
+    margin-top: 15vh;
+    height: 40vh;
+    width: 70vw;
+}
+
+.questionContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+
+
+#questionAnswer > span {
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+}
+
+.questionContainer > audio {
+    height: 10vh;
+}
+
+.questionContainer > span {
+    font-size: large;
+}
+
+.questionContainer > button {
+    border: none;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionContainer > button:hover{
+    background-color: gray;
+}
+
+.questionContainer > button:disabled:hover{
+    background-color: whitesmoke;
+}
+
+.questionContainer > button > b {
+   margin-left: 2%;
+   font-size: medium;
+}
+
+.flowBtn {
+    padding: 2%;
+    width: 20%;
+    border-radius: 5px;
+    margin-left: 80%;
+}
+
+.recordBtn {
+    height: 7vh;
+    border-radius: 30px;
+    width: 13vw;
+}
