@@ -32,6 +32,42 @@
     align-items: center;
 }
 
+.vitalsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+#heartRateContainer {
+    width: 20%;
+    font-size: xx-large;
+}
+
+#painContainer {
+    width: 40%;
+    font-size: larger;
+    margin-left: 3%;
+}
+
+#painContainer > span > span {
+    font-size: 50px;
+    margin-right: 3%;
+}
+
+.header{
+    font-size: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#painContainer > span {
+    width: 100%;
+}
+
 .questionContainer > button:hover{
     background-color: gray;
 }
@@ -56,4 +92,21 @@
     height: 7vh;
     border-radius: 30px;
     width: 13vw;
+    border: none;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recordBtn:hover{
+    background-color: gray;
+}
+
+.surveyAnswer{
+    background-color: whitesmoke; 
+    width: 70%;
+    padding: 3%;
+    border-radius: 30px;
+    margin-bottom: 5%;
 }

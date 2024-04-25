@@ -76,8 +76,8 @@ CORS_ALLOW_HEADERS = [
     # Add any other headers your frontend needs
 ]
 
-# CORS_ORIGIN_ALLOW = True
-# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'src.urls'
 

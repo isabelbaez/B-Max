@@ -31,7 +31,12 @@ function Landing() {
 
   return ( 
     <div className="flex column width-100 align-center">
-      <button style={{display: entryStarted? "none" : ""}} onClick={() => setEntryStarted(true)}>New Entry</button>
+
+      <div className='header' style={{display: entryStarted? "none" : ""}}>
+        <span id="name">B-MAX</span>
+        <span id="description">A Symptom Monitoring Interface</span>
+        <button id="startBtn" style={{display: entryStarted? "none" : ""}} onClick={() => setEntryStarted(true)}>New Entry</button>
+      </div>
 
       <div style={{display: entryStarted? "" : "none"}}>
         {
