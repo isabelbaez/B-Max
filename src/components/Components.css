@@ -103,6 +103,10 @@
     background-color: gray;
 }
 
+.recordBtn:disabled:hover{
+    background-color: whitesmoke;
+}
+
 .surveyAnswer{
     background-color: whitesmoke; 
     width: 70%;

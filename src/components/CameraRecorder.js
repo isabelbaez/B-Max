@@ -272,11 +272,11 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
 
                 {isRecording ? (
                     <div>
-                    <button className="recordBtn" onClick={stopRecording}>
+                    <button className="recordBtn" onClick={stopRecording} disabled={seconds > 20}>
                         <svg height="40" viewBox="0 0 32 32" width="40" xmlns="http://www.w3.org/2000/svg">
                             <g id="Ikon">
                                 <circle cx="16" cy="16" fill="#eee" r="14"/>
-                                <circle cx="16" cy="16" fill="#f44336" r="10"/>
+                                <circle cx="16" cy="16" fill={seconds > 20? "#eee" : "#f44336"} r="10"/>
                             </g>
                         </svg>
                         <b>Stop Recording</b>

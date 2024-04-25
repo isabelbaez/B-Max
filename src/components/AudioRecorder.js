@@ -143,7 +143,7 @@ function AudioRecorder({ state, setState, allAnswers, setAllAnswers }) {
                                     <svg height="40" viewBox="0 0 32 32" width="40" xmlns="http://www.w3.org/2000/svg">
                                         <g id="Ikon">
                                             <circle cx="16" cy="16" fill="#eee" r="14"/>
-                                            <circle cx="16" cy="16" fill={showingTranscription? "eee" : "#f44336"} r="5"/>
+                                            <circle cx="16" cy="16" fill={showingTranscription? "#eee" : "#f44336"} r="5"/>
                                         </g>
                                     </svg>
                                     <b>Record Answer</b>
