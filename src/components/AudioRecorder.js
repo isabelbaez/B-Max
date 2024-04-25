@@ -1,7 +1,7 @@
 import './Components.css';
 import React, { useState, useRef, useEffect } from 'react';
 
-function AudioRecorder({ state, setState }) {
+function AudioRecorder({ state, setState, allAnswers, setAllAnswers }) {
     const [isRecording, setIsRecording] = useState(false);
     const [isAnswering, setIsAnswering] = useState(false);
     const [questions, setQuestions] = useState(null);
@@ -73,6 +73,7 @@ function AudioRecorder({ state, setState }) {
     };
 
     const finishSurvey = () => {
+        setAllAnswers(allAnswers);
         setState(state + 1)
     };
 
@@ -92,6 +93,13 @@ function AudioRecorder({ state, setState }) {
           if (response.ok) {
             const json_data = await response.json();
             setCurrTrancription(json_data['transcription']);
+            if (json_data['transcription'] != 'Google Speech Recognition could not understand the audio'){
+                allAnswers.push(json_data['transcription'])
+            }
+            else{
+                allAnswers.push('N/A')
+            }
+            setAllAnswers(allAnswers)
             console.log('Transcoding successful');
           } else {
             console.error('Transcoding failed:', response.statusText);

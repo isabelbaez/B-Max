@@ -14,6 +14,7 @@ function Landing() {
 
   const [heartRate, setHeartRate] = useState(null);
   const [painProb, setPainProb] = useState(null);
+  const [allAnswers, setAllAnswers] = useState([]);
   
   const handleCameraFinished = (response) => {
     response
@@ -36,7 +37,7 @@ function Landing() {
         {
           currTab === 1 
           && 
-          (<AudioRecorder state={currTab} setState={setCurrTab}/>
+          (<AudioRecorder state={currTab} setState={setCurrTab} allAnswers={allAnswers} setAllAnswers={setAllAnswers}/>
         )}
         {(
           currTab === 0 
@@ -46,7 +47,7 @@ function Landing() {
         {(
           currTab == 2 
           && 
-          <Stats bpm={heartRate} pain={painProb}></Stats>
+          <Stats bpm={heartRate} pain={painProb} allAnswers={allAnswers}></Stats>
         )}
       </div>
     </div>
