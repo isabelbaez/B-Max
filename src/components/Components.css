@@ -81,6 +81,31 @@
    font-size: medium;
 }
 
+#re-record {
+    margin-left: 100px;
+}
+
+.questionContainer > div > button {
+    border: none;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionContainer > div > button:hover{
+    background-color: gray;
+}
+
+.questionContainer > div > button:disabled:hover{
+    background-color: whitesmoke;
+}
+
+.questionContainer > div > button > b {
+   margin-left: 2%;
+   font-size: medium;
+}
+
 .flowBtn {
     padding: 2%;
     width: 20%;
