@@ -264,9 +264,9 @@ function CameraRecorder({state, setState, setHeartRate, setPainProb, onRecording
         <div>
             {isRecording? <h2>Try to stay as still as you can!</h2>: <h2>Align your face with the outline.</h2>}
 
-            <video ref={videoRef} autoPlay width="720" height="560" style={{ display: streamActive ? "" : "none", position: 'absolute', top: "10%", left: "25%" }}/>
-            {!isRecording && (<canvas ref={canvasRef} width="720" height="560" style={{ display: streamActive ? "" : "none", position: 'absolute', top: "10%", left: "25%" }} />)}
-            <canvas id="outlineCanvas" width="720" height="560" style={{ display: streamActive ? "" : "none", position: 'absolute', top: "10%", left: "25%" }}></canvas>
+            <video ref={videoRef} autoPlay width="720" height="560" style={{ display: streamActive ? "" : "none", position: 'absolute', top: "10%", left: "25%", transform: 'scaleX(-1)'}}/>
+            {!isRecording && (<canvas ref={canvasRef} width="720" height="560" style={{ display: streamActive ? "" : "none", position: 'absolute', top: "10%", left: "25%", transform: 'scaleX(-1)' }} />)}
+            <canvas id="outlineCanvas" width="720" height="560" style={{ display: streamActive ? "" : "none", position: 'absolute', top: "10%", left: "25%", transform: 'scaleX(-1)'}}></canvas>
 
             <div style={{ display: streamActive ? "" : "none", position: 'absolute', top: "80%", left: "25%" }}>
 
