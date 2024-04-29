@@ -78,6 +78,16 @@ function AudioRecorder({ state, setState, allAnswers, setAllAnswers }) {
     };
 
     const finishSurvey = () => {
+        setShowingTranscription(false);
+        setCurrTrancription("");
+        setIsAnswering(false);
+        setHasAnswered(false);
+        if (currTrancription != 'Google Speech Recognition could not understand the audio'){
+            allAnswers.push(currTrancription)
+        }
+        else{
+            allAnswers.push('N/A')
+        }
         setAllAnswers(allAnswers);
         setState(state + 1)
     };

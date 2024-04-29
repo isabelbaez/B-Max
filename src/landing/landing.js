@@ -52,7 +52,18 @@ function Landing() {
         {(
           currTab == 2 
           && 
-          <Stats bpm={heartRate} pain={painProb} allAnswers={allAnswers}></Stats>
+          (<div>
+            {heartRate && painProb ? (
+              <Stats bpm={heartRate} pain={painProb} allAnswers={allAnswers}></Stats>
+            ):(
+              <div className='header'>
+                <span id="loading">Calculating vitals...</span>
+                <div className="loader-container">
+                  <div className="loader"></div>
+                </div>
+              </div>
+            )}
+          </div>)
         )}
       </div>
     </div>

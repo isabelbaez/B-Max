@@ -104,6 +104,28 @@
         margin-top: 15%;
     }
 
+    .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+      }
+      
+    .loader {
+        border: 10px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #3498db;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
     #startBtn:hover{
         background-color: gray;
     }
@@ -118,6 +140,11 @@
     }
     #description{
         font-size: x-large;
+    }
+
+    #loading{
+        margin-top: 10%;
+        font-size: xx-large;
     }
 
     /*** ID Styles ***/
