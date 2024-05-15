@@ -121,16 +121,16 @@ def pain_probability():
             pain_1 = first_response.choices[0].message.content
             pain_2 = second_response.choices[0].message.content
 
-            if pain_1 == "Yes.":
-                pain_count += 1.5
+            if "yes" in pain_1.lower():
+                pain_count += 3
                 count += 1
-            elif pain_1 == "No.":
+            elif "no" in pain_1.lower():
                 count += 1
             
-            if pain_2 == "Yes.":
-                pain_count += 1.5
+            if "yes" in pain_2.lower():
+                pain_count += 3
                 count += 1
-            elif pain_2 == "No.":
+            elif "no" in pain_2.lower():
                 count += 1
         
         os.remove(os.path.join(frames_path, filename))

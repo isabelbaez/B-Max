@@ -53,7 +53,7 @@ function Landing() {
           currTab == 2 
           && 
           (<div>
-            {heartRate && painProb ? (
+            {heartRate && painProb !== null ? (
               <Stats bpm={heartRate} pain={painProb} allAnswers={allAnswers}></Stats>
             ):(
               <div className='header'>

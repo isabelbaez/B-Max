@@ -116,7 +116,7 @@ def calculate_heart_rate(filename):
     signal_b = [sig[0] for sig in data]
 
 
-    all_data = [g for r, (g, b) in zip(signal_r, zip(signal_g, signal_b))]
+    all_data = [r + g for r, (g, b) in zip(signal_r, zip(signal_g, signal_b))]
     all_data = preprocess_signal(all_data)
 
     num_samples = len(all_data)//1
