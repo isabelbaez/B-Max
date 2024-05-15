@@ -8,7 +8,7 @@ This is B-Max, a symptom and vitals monitoring web application. Its frontend is 
 
 For the backend, ensure you have some version of Python installed. 
 
-*(**Note:** Multiple versions may work, but in the case you encounter unforeseen errors, we found our system to work best with **Python 3.11.5**)*
+***NOTE:** Multiple versions may work, but in the case you encounter unforeseen errors, we found our system to work best with **Python 3.11.5***
 
 Additionally, ensure you have ffmpeg (a video processing software) installed in your system. It can be installed in macOS using Homebrew:
 
@@ -46,7 +46,7 @@ python manage.py runserver
 
 The backend server should be running in `http://localhost:8000`.
 
-**NOTE:** The OpenAI API requires an API-KEY, an ORG-KEY, and a PROJECT_KEY which we store in a '.env' file that cannot be uploaded. 
+***NOTE:** The OpenAI API requires an API-KEY, an ORG-KEY, and a PROJECT_KEY which we store in a '.env' file that cannot be uploaded.*
 
 ### Troubleshooting
 
