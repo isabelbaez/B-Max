@@ -1,74 +1,48 @@
-# Getting Started with Create React App
+# B-Max Installation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Frontend Scripts
-
-In the project directory (/style2fab-ui), you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is B-Max, a symptom and vitals monitoring web application. Its frontend is built using React (with ) and its backend is built in Django. 
 
 ## Backend Scripts
 
-To launch the backend, access the backend directory (/fa3ds/backend) and run `python3 manage.py runserver`.
+For the backend, ensure you have some version of Python installed. 
 
-## Learn More
+(Note: Multiple versions should work, but in the case you encountered unforeseen errors, we found our system to work best with Python 3.11.6)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Access the B-Max/backend directory and install dependencies for the backend:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+cd B-Max/backend
 
-### Code Splitting
+pip install django
+pip install djangorestframework
+pip install django-cors-headers
+pip install python-dotenv
+pip install openai
+pip install opencv-python
+pip install matplotlib
+pip install scipy==1.11.1 (other versions might cause issues)
+pip install SpeechRecognition
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To start the backend server, run the following command in the same directory:
 
-### Analyzing the Bundle Size
+python manage.py runserver
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Frontend Scripts
 
-### Advanced Configuration
+For the frontend, ensure you have Node.js and npm installed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+(Note: Again, multiple versions should work, but in the case you encountered unforeseen errors, we found our system to work best with Node.js 16.20.2 (npm 8.19.4))
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+In the main project directory (/B-Max), you can run:
 
-### `npm run build` fails to minify
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
