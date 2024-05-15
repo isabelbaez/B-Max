@@ -14,23 +14,23 @@ Access the B-Max/backend directory and install dependencies for the backend:
 
 `cd B-Max/backend`
 
-``pip install django
+`pip install django`
 
-pip install djangorestframework
+`pip install djangorestframework`
 
-pip install django-cors-headers
+`pip install django-cors-headers`
 
-pip install python-dotenv
+`pip install python-dotenv`
 
-pip install openai
+`pip install openai`
 
-pip install opencv-python
+`pip install opencv-python`
 
-pip install matplotlib
+`pip install matplotlib`
 
-pip install scipy==1.11.1 (other versions might cause issues)
+`pip install scipy==1.11.1` (other versions might cause issues)
 
-pip install SpeechRecognition``
+`pip install SpeechRecognition`
 
 To start the backend server, run the following command in the same directory:
 
