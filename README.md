@@ -99,6 +99,29 @@ B-Max's backend is built using Django. The main files at play here can be found 
 - **`/output.mov`** - Converted video for the heart rate calculation. 
 
 
+## Frontend Directory
+
+B-Max's frontend is built using React. 
+
+### `/public` folder
+
+- **`/models`** -
+
+- **`/questions`** -
+
+- **`questions.json`** -  
+
+### `/src` folder
+
+- **`/components/AudioRecorder.js`** -
+
+- **`/components/CameraRecorder.js`** -
+
+- **`/landing/landing.js`** -
+
+
+
+
 
 
 
