@@ -12,7 +12,8 @@ For the backend, ensure you have some version of Python installed.
 
 Additionally, ensure you have `ffmpeg` (a video processing software) installed in your system. It can be installed in macOS using Homebrew:
 
-`brew install ffmpeg`
+```brew install ffmpeg
+```
 
 Next, install dependencies for the backend:
 
@@ -29,11 +30,13 @@ pip install SpeechRecognition
 
 To start the backend server, access the backend B-Max directory:
 
-`cd B-Max/backend`
+```cd B-Max/backend
+```
 
 and run the following command:
 
-`python manage.py runserver`
+```python manage.py runserver
+```
 
 
 ### Troubleshooting
