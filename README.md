@@ -107,21 +107,21 @@ B-Max's frontend is built using React.
 
 - **`/models`** - Folder containing the `face-api.js` models used for the initial real-time user face tracking to confirm their positioning. 
 
-- **`/questions`** -
+- **`/questions`** - This folder contains the audio files used as audio questions for the self-reporting health questionaire.
 
 - **`questions.json`** - Contains the written medical questionnaire questions in JSON format.  
 
 ### `/src` folder
 
-- **`/components/AudioRecorder.js`** -
+- **`/landing/landing.js`** - This React component is the one that is opened on initialization of our client. It contained the HTML code related to the Welcome screen, and also contains a state controller that will change the React component depending on the stage of the daily health evaluation the user is in: changing to CameraRecorder when the user needs to be recorded for the heart rate and pain calculations, to the AudioRecorder when the user is completing the self-evaluation questionaire, and then to Stats which would display the results obtained on the screen.
 
-- **`/components/CameraRecorder.js`** -
+- **`/components/AudioRecorder.js`** - This file is the React component that handles the user answering the questions. It has a useState that gets updated as the user goes from question to question, and it calls the appropiate question audio file and text to be displayed and played when the user encounters a new question. It also has the code that displays the record/stop recording/re-record buttons and allows for audio input that is sent to the backend as well as display the text response that the backend returns.
 
-- **`/components/Components.css`** -
+- **`/components/CameraRecorder.js`** - This file is the React component that handles the user's interaction with the camera. It always displays the content of the web cam on the screen and has useStates that first provide an alignment stage followed by a recording stage. In the alignement state the image of the to-record video is displayed providing an outline of where to user's face should be. It has a button to start recording which would start colecting video input from the webcam. The video is automatically stopped after 30 seconds but the user can press the button again to stop the recording after a minimum of 15 seconds of recording. One this happens a request with the video file is sent to the backend which responds with the calculated heart rate and pain level given the input video.
 
-- **`/landing/landing.js`** -
+- **`/components/Components.css`** - Css file with formatting for AudioRecorder, CameraRecorder and Stats compoments.
 
-- **`/landing/landing.css`** -
+- **`/landing/landing.css`** - Css file with the formating for the lading page
 
 
 
