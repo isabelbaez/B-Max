@@ -26,11 +26,13 @@ pip install python-dotenv
 pip install openai
 pip install opencv-python
 pip install matplotlib
-pip install scipy==1.11.1 (other versions might cause issues)
+pip install scipy==1.11.1
 pip install SpeechRecognition
 ```
 
-To start the backend server, access the backend B-Max directory:
+Make sure you install the specified `scipy` version (1.11.1) as other versions might cause issues.
+
+Finally, to start the backend server, access the backend B-Max directory:
 
 ```
 cd B-Max/backend
