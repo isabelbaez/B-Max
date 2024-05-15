@@ -117,8 +117,11 @@ B-Max's frontend is built using React.
 
 - **`/components/CameraRecorder.js`** -
 
+- **`/components/Components.css`** -
+
 - **`/landing/landing.js`** -
 
+- **`/landing/landing.css`** -
 
 
 
