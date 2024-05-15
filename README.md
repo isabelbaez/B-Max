@@ -46,7 +46,7 @@ python manage.py runserver
 
 The backend server should be running in `http://localhost:8000`.
 
-***NOTE:** The OpenAI API requires an API-KEY, an ORG-KEY, and a PROJECT_KEY which we store in a '.env' file that cannot be uploaded.*
+***NOTE:** The OpenAI API requires an API-KEY, an ORG-KEY, and a PROJECT_KEY which we store in a `.env` file that cannot be uploaded.*
 
 ### Troubleshooting
 
