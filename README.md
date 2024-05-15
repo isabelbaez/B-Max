@@ -8,7 +8,7 @@ This is B-Max, a symptom and vitals monitoring web application. Its frontend is 
 
 For the backend, ensure you have some version of Python installed. 
 
-(**Note:** Multiple versions may work, but in the case you encounter unforeseen errors, we found our system to work best with Python 3.11.5)
+*(**Note:** Multiple versions may work, but in the case you encounter unforeseen errors, we found our system to work best with Python 3.11.5)*
 
 Additionally, ensure you have `ffmpeg` (a video processing software) installed in your system. It can be installed in macOS using Homebrew:
 
