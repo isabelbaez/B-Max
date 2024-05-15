@@ -12,7 +12,7 @@ For the backend, ensure you have some version of Python installed.
 
 Access the B-Max/backend directory and install dependencies for the backend:
 
-cd B-Max/backend
+`cd B-Max/backend`
 
 ### pip install django
 pip install djangorestframework
