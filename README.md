@@ -75,6 +75,32 @@ npm start
 You should now be able to access B-Max at `http://localhost:3000`.
 
 
+# List of Contents
+
+## Backend Directory
+
+B-Max's backend is built using Django. The main files at play here can be found under the `/vitals` folder. 
+
+### `/vitals` folder
+
+- **`urls.py`** - specifies the endpoints for the vitals measurement and the speech transcription (`/measureVitals` and `/processAudio` respectively). 
+
+- **`audio_process.py`** - contains all the work for the speech-to-text transcriptions. It takes in a WebM audio, converts it into WAV format and uses the SpeechRecognition library to output a text transcription.
+
+- **`vitals_utils/heart_rate.py`** - contains most of the work for the heart rate calculation. It takes in a video in MOV format and outputs the pulse.
+
+- **`views.py`** - Contains all of the work for the pain probability calculation and some work for the heart rate calculation. Takes in a video in MOV format and outputs the calculated hear rate and pain probability percentage. The heart rate portion takes in a video in WebM format and converts it into MOV format, then using the functions in `heart_rate.py` to output the pulse. The pain probability workflow extracts the frames of the WebM video and stores them in JPEG format, then using the ChatGPT API to output the pain probability percentage. 
+
+
+### `/media` folder
+
+- **`/frames`** - Empty folder to store the extracted frames for the pain probability calculation.
+
+- **`/output.mov`** - Converted video for the heart rate calculation. 
+
+
+
+
 
 
 
