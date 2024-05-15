@@ -46,6 +46,8 @@ python manage.py runserver
 
 The backend server should be running in `http://localhost:8000`.
 
+**NOTE:** The OpenAI API requires an API-KEY, an ORG-KEY, and a PROJECT_KEY which we store in a '.env' file that cannot be uploaded. 
+
 ### Troubleshooting
 
 If you encounter an `ImportError: libGL.so.1: cannot open shared object file: No such file or directory` error message when running the backend server, it can be due to not having the necessary OpenGL libraries. To account for this in macOS, you can use Homebrew:
