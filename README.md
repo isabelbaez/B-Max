@@ -119,6 +119,8 @@ B-Max's frontend is built using React.
 
 - **`/components/CameraRecorder.js`** - This file is the React component that handles the user's interaction with the camera. It always displays the content of the web cam on the screen and has useStates that first provide an alignment stage followed by a recording stage. In the alignement state the image of the to-record video is displayed providing an outline of where to user's face should be. It has a button to start recording which would start colecting video input from the webcam. The video is automatically stopped after 30 seconds but the user can press the button again to stop the recording after a minimum of 15 seconds of recording. One this happens a request with the video file is sent to the backend which responds with the calculated heart rate and pain level given the input video.
 
+- **`/components/Stats.js`** - This file is the React component that is incharged of displying the results obtained by B-Max. After completing the video recording and audio recording of answers, this file prompts a loading page while still awaiting for response from the backend from any of the requests sent of these media to get back heart rate, pain rate, and text transcription of the user's answers to the questions. Once loaded, this page displays the calculated heart rate, pain level and the text question-answer pairs that the user reported.
+
 - **`/components/Components.css`** - Css file with formatting for AudioRecorder, CameraRecorder and Stats compoments.
 
 - **`/landing/landing.css`** - Css file with the formating for the lading page
