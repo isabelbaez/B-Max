@@ -14,7 +14,7 @@ Access the B-Max/backend directory and install dependencies for the backend:
 
 cd B-Max/backend
 
-pip install django
+### pip install django
 pip install djangorestframework
 pip install django-cors-headers
 pip install python-dotenv
